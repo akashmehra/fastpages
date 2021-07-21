@@ -9,18 +9,34 @@
 <meta property="og:title" content="Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai" />
 <meta name="author" content="Akash Mehra" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research." />
-<meta property="og:description" content="Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research." />
-<link rel="canonical" href="https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html" />
-<meta property="og:url" content="https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html" />
+<meta name="description" content="Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with the one written using Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boiler plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research." />
+<meta property="og:description" content="Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with the one written using Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boiler plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research." />
+<link rel="canonical" href="https://akashmehra.github.io/ai/image_classification/pets/fastai/pytorch/resnet34/fine-tuning/2021/07/20/pets_fast_ai.html" />
+<meta property="og:url" content="https://akashmehra.github.io/ai/image_classification/pets/fastai/pytorch/resnet34/fine-tuning/2021/07/20/pets_fast_ai.html" />
 <meta property="og:site_name" content="Akash’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-07-20T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html","@type":"BlogPosting","dateModified":"2021-07-20T00:00:00-05:00","datePublished":"2021-07-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html"},"author":{"@type":"Person","name":"Akash Mehra"},"headline":"Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai","description":"Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research.","@context":"https://schema.org"}</script>
+{"url":"https://akashmehra.github.io/ai/image_classification/pets/fastai/pytorch/resnet34/fine-tuning/2021/07/20/pets_fast_ai.html","@type":"BlogPosting","dateModified":"2021-07-20T00:00:00-05:00","datePublished":"2021-07-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://akashmehra.github.io/ai/image_classification/pets/fastai/pytorch/resnet34/fine-tuning/2021/07/20/pets_fast_ai.html"},"author":{"@type":"Person","name":"Akash Mehra"},"headline":"Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai","description":"Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with the one written using Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boiler plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://akashmehra.github.io/fastpages/feed.xml" title="Akash's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+<link rel="stylesheet" href="/ai/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://akashmehra.github.io/ai/feed.xml" title="Akash's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/ai/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" /><script src="https://hypothes.is/embed.js" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
 
 <script>
 function wrap_img(fn) {
@@ -54,7 +70,7 @@ window.onload = wrap_img;
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/fastpages/">Akash&#39;s Blog</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href="/ai/">Akash&#39;s Blog</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -64,7 +80,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/fastpages/about/">About Me</a><a class="page-link" href="/fastpages/search/">Search</a><a class="page-link" href="/fastpages/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/ai/about/">About Me</a><a class="page-link" href="/ai/search/">Search</a><a class="page-link" href="/ai/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -72,7 +88,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai</h1><p class="page-description">Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how `fastai` can really help one get started with `deep learning` and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. `fastai` is amazing at abstracting away a lot of inner details that we should focus on but not when we're starting out or when we're prototyping our research.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-20T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai</h1><p class="page-description">Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with the one written using Fast.ai. The purpose of this blog is to demonstrate how `fastai` can really help one get started with `deep learning` and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boiler plate code. `fastai` is amazing at abstracting away a lot of inner details that we should focus on but not when we're starting out or when we're prototyping our research.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-20T00:00:00-05:00" itemprop="datePublished">
         Jul 20, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -87,10 +103,22 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/fastpages/categories/#fastpages">fastpages</a>
+        <a class="category-tags-link" href="/ai/categories/#image_classification">image_classification</a>
         &nbsp;
       
-        <a class="category-tags-link" href="/fastpages/categories/#jupyter">jupyter</a>
+        <a class="category-tags-link" href="/ai/categories/#pets">pets</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai/categories/#fastai">fastai</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai/categories/#pytorch">pytorch</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai/categories/#resnet34">resnet34</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai/categories/#fine-tuning">fine-tuning</a>
         
       
       </p>
@@ -101,20 +129,20 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/akashmehra/fastpages/tree/fastbook/lessons/_notebooks/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.ipynb" role="button" target="_blank">
-<img class="notebook-badge-image" src="/fastpages/assets/badges/github.svg" alt="View On GitHub">
+    <a href="https://github.com/akashmehra/blog/tree/master/_notebooks/pets_fast_ai.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/ai/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/akashmehra/fastpages/fastbook/lessons?filepath=_notebooks%2FResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    <a href="https://mybinder.org/v2/gh/akashmehra/blog/master?filepath=_notebooks%2Fpets_fast_ai.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/ai/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/akashmehra/fastpages/blob/fastbook/lessons/_notebooks/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    <a href="https://colab.research.google.com/github/akashmehra/blog/blob/master/_notebooks/pets_fast_ai.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/ai/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
         </div>
@@ -169,7 +197,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.ipynb
+# file to edit: _notebooks/pets_fast_ai.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -2080,26 +2108,26 @@ Applying batch_tfms to the batch built
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
-        repo="akashmehra/fastpages"
+        repo="akashmehra/blog"
         issue-term="title"
         label="blogpost-comment"
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html" hidden></a>
+</script><a class="u-url" href="/ai/image_classification/pets/fastai/pytorch/resnet34/fine-tuning/2021/07/20/pets_fast_ai.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
-  <data class="u-url" href="/fastpages/"></data>
+  <data class="u-url" href="/ai/"></data>
 
   <div class="wrapper">
 
     <div class="footer-col-wrapper">
       <div class="footer-col">
         <p class="feed-subscribe">
-          <a href="/fastpages/feed.xml">
+          <a href="/ai/feed.xml">
             <svg class="svg-icon orange">
-              <use xlink:href="/fastpages/assets/minima-social-icons.svg#rss"></use>
+              <use xlink:href="/ai/assets/minima-social-icons.svg#rss"></use>
             </svg><span>Subscribe</span>
           </a>
         </p>
@@ -2109,7 +2137,7 @@ Applying batch_tfms to the batch built
       </div>
     </div>
 
-    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/akashmehra" title="akashmehra"><svg class="svg-icon grey"><use xlink:href="/fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/akashmehra" title="akashmehra"><svg class="svg-icon grey"><use xlink:href="/fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/akashmehra" title="akashmehra"><svg class="svg-icon grey"><use xlink:href="/ai/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/akashmehra" title="akashmehra"><svg class="svg-icon grey"><use xlink:href="/ai/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
 </div>
 
   </div>
