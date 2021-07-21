@@ -1,1 +1,1 @@
-Sitemap: https://akashmehra.github.io/ai/sitemap.xml
+Sitemap: https://akashmehra.github.io/fastpages/sitemap.xml

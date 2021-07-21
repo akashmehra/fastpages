@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://akashmehra.github.io/ai/image_classification/pets/fastai/pytorch/resnet34/fine-tuning/2021/07/20/pets_fast_ai.html</loc>
+<loc>https://akashmehra.github.io/fastpages/image_classification/pets/fastai/pytorch/resnet34/fine-tuning/2021/07/20/pets_fast_ai.html</loc>
 <lastmod>2021-07-20T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://akashmehra.github.io/ai/about/</loc>
+<loc>https://akashmehra.github.io/fastpages/about/</loc>
 </url>
 <url>
-<loc>https://akashmehra.github.io/ai/</loc>
+<loc>https://akashmehra.github.io/fastpages/</loc>
 </url>
 <url>
-<loc>https://akashmehra.github.io/ai/search/</loc>
+<loc>https://akashmehra.github.io/fastpages/search/</loc>
 </url>
 <url>
-<loc>https://akashmehra.github.io/ai/categories/</loc>
+<loc>https://akashmehra.github.io/fastpages/categories/</loc>
 </url>
 </urlset>
