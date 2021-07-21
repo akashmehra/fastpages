@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Comparison of a ResNet34 based pets classifier using raw PyTorch and Fast.ai | Akash’s Blog</title>
+<title>Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai | Akash’s Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Comparison of a ResNet34 based pets classifier using raw PyTorch and Fast.ai" />
+<meta property="og:title" content="Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai" />
 <meta name="author" content="Akash Mehra" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research." />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-07-20T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html","@type":"BlogPosting","dateModified":"2021-07-20T00:00:00-05:00","datePublished":"2021-07-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html"},"author":{"@type":"Person","name":"Akash Mehra"},"headline":"Comparison of a ResNet34 based pets classifier using raw PyTorch and Fast.ai","description":"Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research.","@context":"https://schema.org"}</script>
+{"url":"https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html","@type":"BlogPosting","dateModified":"2021-07-20T00:00:00-05:00","datePublished":"2021-07-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://akashmehra.github.io/fastpages/fastpages/jupyter/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html"},"author":{"@type":"Person","name":"Akash Mehra"},"headline":"Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai","description":"Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how fastai can really help one get started with deep learning and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. fastai is amazing at abstracting away a lot of inner details that we should focus on but not when we’re starting out or when we’re prototyping our research.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://akashmehra.github.io/fastpages/feed.xml" title="Akash's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,7 +72,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Comparison of a ResNet34 based pets classifier using raw PyTorch and Fast.ai</h1><p class="page-description">Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how `fastai` can really help one get started with `deep learning` and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. `fastai` is amazing at abstracting away a lot of inner details that we should focus on but not when we're starting out or when we're prototyping our research.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-20T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Comparison of a ResNet34 based pets classifier using vanilla PyTorch and Fast.ai</h1><p class="page-description">Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with that written in Fast.ai. The purpose of this blog is to demonstrate how `fastai` can really help one get started with `deep learning` and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boilder plate code. `fastai` is amazing at abstracting away a lot of inner details that we should focus on but not when we're starting out or when we're prototyping our research.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-20T00:00:00-05:00" itemprop="datePublished">
         Jul 20, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -80,7 +80,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      17 min read
     
 </span></p>
 
@@ -122,6 +122,49 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#PyTorch-Version">PyTorch Version </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Fetch-Data">Fetch Data </a></li>
+<li class="toc-entry toc-h3"><a href="#Extract-Labels">Extract Labels </a></li>
+<li class="toc-entry toc-h3"><a href="#Data-Splitter">Data Splitter </a></li>
+<li class="toc-entry toc-h3"><a href="#Writing-a-PyTorch-Dataset">Writing a PyTorch Dataset </a></li>
+<li class="toc-entry toc-h3"><a href="#Data-Inspection">Data Inspection </a></li>
+<li class="toc-entry toc-h3"><a href="#Model-Architecture">Model Architecture </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Changing-the-classifier">Changing the classifier </a></li>
+<li class="toc-entry toc-h4"><a href="#Making-the-model-fine-tunable">Making the model fine-tunable </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Trainer">Trainer </a></li>
+<li class="toc-entry toc-h3"><a href="#Training-(fine-tuning)-the-model">Training (fine-tuning) the model </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Hyperparameters">Hyperparameters </a></li>
+<li class="toc-entry toc-h4"><a href="#Criterion,-Optimizer-and-Training">Criterion, Optimizer and Training </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Plotting-Utilities">Plotting Utilities </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Loss">Loss </a></li>
+<li class="toc-entry toc-h4"><a href="#Accuracy">Accuracy </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Summary-of-PyTorch-Version">Summary of PyTorch Version </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Fast.ai-Version">Fast.ai Version </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Fetch-Data">Fetch Data </a></li>
+<li class="toc-entry toc-h3"><a href="#Define-DataBlock">Define DataBlock </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Sanity-Check">Sanity Check </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Dataloader">Dataloader </a></li>
+<li class="toc-entry toc-h3"><a href="#Training-(fine-tuning)-the-model">Training (fine-tuning) the model </a></li>
+<li class="toc-entry toc-h3"><a href="#Interpretation-and-Analysis">Interpretation and Analysis </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Summary">Summary </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -159,6 +202,15 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="PyTorch-Version">
+<a class="anchor" href="#PyTorch-Version" aria-hidden="true"><span class="octicon octicon-link"></span></a>PyTorch Version<a class="anchor-link" href="#PyTorch-Version"> </a>
+</h2>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -169,7 +221,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
 <span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">optim</span>
 <span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dataloader</span>
 <span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
@@ -197,6 +249,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fetch-Data">
+<a class="anchor" href="#Fetch-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fetch Data<a class="anchor-link" href="#Fetch-Data"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The data is a <code>tar-gzip</code> archive, to extract data files from it we'll use the package called <code>tarfile</code>. But first we need to download the archive.</p>
 <p>The code in the cell below is taken form: <a href="https://gist.github.com/devhero/8ae2229d9ea1a59003ced4587c9cb236#gistcomment-3775721">https://gist.github.com/devhero/8ae2229d9ea1a59003ced4587c9cb236#gistcomment-3775721</a>.</p>
 
@@ -210,7 +271,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">download</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"r|gz"</span><span class="p">)</span>
@@ -242,7 +303,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">pets_url</span> <span class="o">=</span> <span class="s1">'https://s3.amazonaws.com/fast-ai-imageclas/oxford-iiit-pet.tgz'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pets_url</span> <span class="o">=</span> <span class="s1">'https://s3.amazonaws.com/fast-ai-imageclas/oxford-iiit-pet.tgz'</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'gdrive'</span><span class="p">,</span> <span class="s1">'MyDrive'</span><span class="p">,</span> <span class="s1">'pets_data'</span><span class="p">)</span>
 <span class="n">base_img_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">'oxford-iiit-pet'</span><span class="p">,</span> <span class="s1">'images'</span><span class="p">)</span>
 <span class="n">fetch_data</span><span class="p">(</span><span class="n">pets_url</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">)</span>
@@ -260,6 +321,22 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We've extracted the data in the folder named <code>pets_data</code>, on inspection, it looks like the folder <code>pets_data/oxford-iiit-pet/images</code> contains all the images we want (some files need to be filtered out as they're not in JPEG format). The filenames have the category labels in their name itself in the format: <code>&lt;CATEGORYNAME&gt;_&lt;NUMBER&gt;.jpg</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Extract-Labels">
+<a class="anchor" href="#Extract-Labels" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extract Labels<a class="anchor-link" href="#Extract-Labels"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In order to extract the category name from the file names in fastbook, a <code>RegexLabeller</code> is used. We'll write a similar <code>LabelExtractor</code> (although it's very inferior in functionality to the <code>fastai's</code> <code>RegexLabeller</code> but does the job for now.</p>
 
 </div>
@@ -272,7 +349,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">RegexLabelExtractor</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">RegexLabelExtractor</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pattern</span> <span class="o">=</span> <span class="n">pattern</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_names</span> <span class="o">=</span> <span class="p">[]</span>
@@ -313,7 +390,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">LabelManager</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LabelManager</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_label_to_idx</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>    
         <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
@@ -345,6 +422,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-Splitter">
+<a class="anchor" href="#Data-Splitter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Splitter<a class="anchor-link" href="#Data-Splitter"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We'd also like to spilt our dataset into <code>train</code> and <code>validation</code> subsets. Although the dataset provides a list of <code>train</code> and <code>validation</code> splits but to be consistent with the book, we'll just write our version of the <code>RandomSplitter</code> (which again would be very inferior in functionality, but will do the job for the purposes of demonstration).</p>
 <p>We'd like this <code>Splitter</code> to accept a <code>percentage</code> to split on and also a <code>seed</code> for reproducibility.</p>
 
@@ -358,7 +444,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Splitter</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Splitter</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valid_pct</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">valid_pct</span> <span class="o">=</span> <span class="n">valid_pct</span>
@@ -377,6 +463,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Writing-a-PyTorch-Dataset">
+<a class="anchor" href="#Writing-a-PyTorch-Dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing a PyTorch Dataset<a class="anchor-link" href="#Writing-a-PyTorch-Dataset"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Now that we have a way to extract labels, maintain them in a map and split the data into <code>train</code> and <code>validation</code> splits, we'll define a <code>PetsDataset</code> ( a <code>PyTorch Dataset</code>) which will be used by the <code>PyTorch DataLoader</code>to give us the data we need to provide our model to train.</p>
 <p>A note on <code>PyTorch Dataset</code>: A PyTorch dataset is a primitive provided by the library that stores the samples and their corresponding labels. In order to write a custom dataset, our class <code>PetsDataset</code> needs to implement three functions: <code>__init__</code>, <code>__len__</code>, and <code>__getitem__</code>.</p>
 
@@ -390,7 +485,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">PetsDataset</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">PetsDataset</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">tfms</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">PetsDataset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
@@ -407,6 +502,7 @@ window.onload = wrap_img;
     
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    
 </pre></div>
 
     </div>
@@ -439,7 +535,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">DatasetManager</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">DatasetManager</span><span class="p">():</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">label_extractor</span><span class="p">,</span> <span class="n">tfms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valid_pct</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_labels</span> <span class="o">=</span> <span class="n">label_extractor</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
@@ -462,6 +558,7 @@ window.onload = wrap_img;
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">valid_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    
         <span class="k">return</span> <span class="n">PetsDataset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">valid_data</span><span class="p">,</span> <span class="n">tfms</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tfms</span><span class="p">)</span>
+    
 </pre></div>
 
     </div>
@@ -486,7 +583,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">base_img_dir</span><span class="p">))</span> <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.jpg'</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">base_img_dir</span><span class="p">))</span> <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.jpg'</span><span class="p">)]</span>
 <span class="n">pattern</span> <span class="o">=</span> <span class="s1">'(.+)_\d+.jpg$'</span>
 <span class="n">regex_label_extractor</span> <span class="o">=</span> <span class="n">RegexLabelExtractor</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
 <span class="n">dataset_manager</span> <span class="o">=</span> <span class="n">DatasetManager</span><span class="p">(</span><span class="n">base_img_dir</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">regex_label_extractor</span><span class="p">,</span> 
@@ -518,7 +615,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset_manager</span><span class="o">.</span><span class="n">label_manager</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'label_name'</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset_manager</span><span class="o">.</span><span class="n">label_manager</span><span class="o">.</span><span class="n">keys</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'label_name'</span><span class="p">])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
 
@@ -723,6 +820,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-Inspection">
+<a class="anchor" href="#Data-Inspection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Inspection<a class="anchor-link" href="#Data-Inspection"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>A method to plot one batch of data (inspired by <code>fastai</code> of course but again a very curtailed version of what that function does). Notice how we're calling <code>transforms.ToPILImage()</code>, that's because we have objects of type <code>torch.Tensor</code> in our batch and in order to plot them we need to convert them to a <code>PIL.Image</code>, rest everything is done to just make sure we've got the images aligned in a nice way across different panels.</p>
 
 </div>
@@ -735,7 +841,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">plot_one_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">max_images</span><span class="o">=</span><span class="mi">9</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_one_batch</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">max_images</span><span class="o">=</span><span class="mi">9</span><span class="p">):</span>
     <span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">max_images</span><span class="p">))</span>
     <span class="n">ncols</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">max_images</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">nrows</span> <span class="o">*</span> <span class="n">ncols</span> <span class="o">!=</span> <span class="n">max_images</span><span class="p">:</span>
@@ -773,7 +879,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">generate_one_batch</span><span class="p">(</span><span class="n">dl</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate_one_batch</span><span class="p">(</span><span class="n">dl</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">dl</span><span class="p">:</span>
         <span class="k">yield</span> <span class="n">batch</span>
 </pre></div>
@@ -792,7 +898,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">plot_one_batch</span><span class="p">(</span><span class="n">generate_one_batch</span><span class="p">(</span><span class="n">train_dl</span><span class="p">),</span> <span class="n">max_images</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_one_batch</span><span class="p">(</span><span class="n">generate_one_batch</span><span class="p">(</span><span class="n">train_dl</span><span class="p">),</span> <span class="n">max_images</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -821,6 +927,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model-Architecture">
+<a class="anchor" href="#Model-Architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Architecture<a class="anchor-link" href="#Model-Architecture"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, we're ready to look at the model and make a few decisions about the architecture we wan to use.</p>
 <p>Here's our requirement: We want to extract the features from an image and then uses a classification head to get the output distribution over the number of classes (our <code>labels</code> from before). We'll define a loss and use it to optimize the network.</p>
 <p>Because we're dealing with images, a Convolution Neural Network (CNN) seems like a good start, in the literature as well as <code>fastbook</code>, a <code>restnet</code> type architecture has been used, so let's use that and see what we can do with it.</p>
@@ -836,7 +951,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet34</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">resnet34</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -871,6 +986,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Changing-the-classifier">
+<a class="anchor" href="#Changing-the-classifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing the classifier<a class="anchor-link" href="#Changing-the-classifier"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Since this model is trained to give an output distribution for 1000 classes, we can just change that layer to give us an output distribution based on what we have in our dataset and then fine-tune this layer. To read more on fine-tuning refer to <code>fastbook</code></p>
 
 </div>
@@ -883,7 +1007,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset_manager</span><span class="o">.</span><span class="n">label_manager</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset_manager</span><span class="o">.</span><span class="n">label_manager</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -893,6 +1017,15 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Making-the-model-fine-tunable">
+<a class="anchor" href="#Making-the-model-fine-tunable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Making the model fine-tunable<a class="anchor-link" href="#Making-the-model-fine-tunable"> </a>
+</h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -908,7 +1041,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">make_fine_tunable</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_fine_tunable</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
         <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
@@ -933,7 +1066,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">make_fine_tunable</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">make_fine_tunable</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -966,6 +1099,15 @@ fc.bias -&gt; True
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Trainer">
+<a class="anchor" href="#Trainer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trainer<a class="anchor-link" href="#Trainer"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Now comes in a point where we have to write a traininig loop and this is where things get into the Boiler Plate code category even more. We shouldn't be writing this but that's the point of this blog post that using <code>fastai</code> we can offload a lot of the boiler plate code to the library and use the goodies offered by the library to our advantage and focus more on research/modeling.</p>
 
 </div>
@@ -986,7 +1128,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Trainer</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Trainer</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">test_dataloader</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">train_dl</span> <span class="o">=</span> <span class="n">train_dataloader</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
@@ -1074,6 +1216,15 @@ fc.bias -&gt; True
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Training-(fine-tuning)-the-model">
+<a class="anchor" href="#Training-(fine-tuning)-the-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training (fine-tuning) the model<a class="anchor-link" href="#Training-(fine-tuning)-the-model"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's send the model over to the GPU for faster training.</p>
 
 </div>
@@ -1086,7 +1237,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1096,6 +1247,15 @@ fc.bias -&gt; True
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Hyperparameters">
+<a class="anchor" href="#Hyperparameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hyperparameters<a class="anchor-link" href="#Hyperparameters"> </a>
+</h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1111,7 +1271,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">TrainConfig</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">TrainConfig</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">),</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bs</span> <span class="o">=</span> <span class="n">bs</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
@@ -1142,7 +1302,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">TrainConfig</span><span class="p">(</span><span class="n">bs</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">TrainConfig</span><span class="p">(</span><span class="n">bs</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
 <span class="n">train_dl</span> <span class="o">=</span> <span class="n">dataloader</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">bs</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">num_workers</span><span class="p">)</span>
 <span class="n">valid_dl</span> <span class="o">=</span> <span class="n">dataloader</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">valid_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">bs</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">num_workers</span><span class="p">)</span>
@@ -1163,6 +1323,15 @@ fc.bias -&gt; True
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Criterion,-Optimizer-and-Training">
+<a class="anchor" href="#Criterion,-Optimizer-and-Training" aria-hidden="true"><span class="octicon octicon-link"></span></a>Criterion, Optimizer and Training<a class="anchor-link" href="#Criterion,-Optimizer-and-Training"> </a>
+</h4>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1170,7 +1339,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">))</span>
 <span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">train_dl</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">test_dataloader</span><span class="o">=</span><span class="n">valid_dl</span><span class="p">)</span>
 <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1186,6 +1355,15 @@ fc.bias -&gt; True
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Plotting-Utilities">
+<a class="anchor" href="#Plotting-Utilities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plotting Utilities<a class="anchor-link" href="#Plotting-Utilities"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Helper functions for plotting our loss and accuracies (which we've recorded using our trainer)</p>
 
 </div>
@@ -1198,7 +1376,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">plot_losses</span><span class="p">(</span><span class="n">losses</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_losses</span><span class="p">(</span><span class="n">losses</span><span class="p">):</span>
     <span class="n">train_loss</span> <span class="o">=</span> <span class="n">losses</span><span class="p">[</span><span class="s1">'train'</span><span class="p">]</span>
     <span class="n">test_loss</span> <span class="o">=</span> <span class="n">losses</span><span class="p">[</span><span class="s1">'test'</span><span class="p">]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
@@ -1225,7 +1403,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">plot_accuracy</span><span class="p">(</span><span class="n">accuracy</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_accuracy</span><span class="p">(</span><span class="n">accuracy</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'fivethirtyeight'</span><span class="p">)</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Test Accuracy'</span><span class="p">)</span>
@@ -1242,6 +1420,15 @@ fc.bias -&gt; True
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Loss">
+<a class="anchor" href="#Loss" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loss<a class="anchor-link" href="#Loss"> </a>
+</h4>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1249,7 +1436,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">losses</span> <span class="o">=</span> <span class="p">{</span> <span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">trainer</span><span class="o">.</span><span class="n">recorder</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">losses</span> <span class="o">=</span> <span class="p">{</span> <span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">trainer</span><span class="o">.</span><span class="n">recorder</span><span class="p">[</span><span class="s1">'loss'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">}</span>
 <span class="n">plot_losses</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span>
 </pre></div>
 
@@ -1276,6 +1463,15 @@ fc.bias -&gt; True
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Accuracy">
+<a class="anchor" href="#Accuracy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accuracy<a class="anchor-link" href="#Accuracy"> </a>
+</h4>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1283,7 +1479,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">accuracies</span> <span class="o">=</span> <span class="p">{</span> <span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">trainer</span><span class="o">.</span><span class="n">recorder</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">accuracies</span> <span class="o">=</span> <span class="p">{</span> <span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">t</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">trainer</span><span class="o">.</span><span class="n">recorder</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 <span class="n">plot_accuracy</span><span class="p">(</span><span class="n">accuracy</span><span class="o">=</span><span class="n">accuracies</span><span class="p">[</span><span class="s1">'test'</span><span class="p">])</span>
 </pre></div>
 
@@ -1313,17 +1509,33 @@ fc.bias -&gt; True
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The story so far:</p>
-<p>We've done the following:</p>
+<h3 id="Summary-of-PyTorch-Version">
+<a class="anchor" href="#Summary-of-PyTorch-Version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary of PyTorch Version<a class="anchor-link" href="#Summary-of-PyTorch-Version"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>~Load Data~</li>
-<li>~Inspect Data: Plot a few examples~</li>
-<li>~Create a DataLoader~</li>
-<li>~Define a model architecture.~</li>
-<li>~Write a training loop.~</li>
-<li>~Plot metrics.~</li>
+<li>Load Data</li>
+<li>Inspect Data: Plot a few examples</li>
+<li>Create a DataLoader</li>
+<li>Define a model architecture.</li>
+<li>Write a training loop.</li>
+<li>Plot metrics.</li>
 </ol>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fast.ai-Version">
+<a class="anchor" href="#Fast.ai-Version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fast.ai Version<a class="anchor-link" href="#Fast.ai-Version"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -1345,7 +1557,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">fastcore.all</span> <span class="kn">import</span> <span class="n">L</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastcore.all</span> <span class="kn">import</span> <span class="n">L</span>
 <span class="kn">from</span> <span class="nn">fastai.vision.all</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'Greys'</span><span class="p">)</span>
 </pre></div>
@@ -1361,6 +1573,15 @@ fc.bias -&gt; True
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fetch-Data">
+<a class="anchor" href="#Fetch-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fetch Data<a class="anchor-link" href="#Fetch-Data"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We'll first download the <code>Pets</code> data and <code>untar</code> it using the <code>untar_data</code> function and this function really takes care of filtering the images and storing them somewhere on the disk for us and then returning the paths. It's helpful as I don't have to take a peek at the response object and parse it then untar it, apply filters and then iterate through the directory. This function does it all for us. To know more about <code>untar_data</code>, please checkout the documentation for <a href="https://docs.fast.ai/data.external.html#untar_data">untar_data</a></p>
 
 </div>
@@ -1373,25 +1594,10 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">untar_data</span><span class="p">(</span><span class="n">URLs</span><span class="o">.</span><span class="n">PETS</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -1405,7 +1611,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">Path</span><span class="o">.</span><span class="n">BASE_PATH</span> <span class="o">=</span> <span class="n">path</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Path</span><span class="o">.</span><span class="n">BASE_PATH</span> <span class="o">=</span> <span class="n">path</span>
 <span class="n">path</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
 </pre></div>
 
@@ -1443,7 +1649,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">"images"</span><span class="p">)</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">"images"</span><span class="p">)</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1476,6 +1682,15 @@ fc.bias -&gt; True
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Define-DataBlock">
+<a class="anchor" href="#Define-DataBlock" aria-hidden="true"><span class="octicon octicon-link"></span></a>Define DataBlock<a class="anchor-link" href="#Define-DataBlock"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's construct a <code>DataBlock</code> object. A <code>DataBlock</code> object provides us encapsulation over many aspects of our data loading and arranging pipeline. It let's us define the</p>
 <ul>
 <li>
@@ -1501,7 +1716,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">pets</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span><span class="n">blocks</span> <span class="o">=</span> <span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pets</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="p">(</span><span class="n">blocks</span> <span class="o">=</span> <span class="p">(</span><span class="n">ImageBlock</span><span class="p">,</span> <span class="n">CategoryBlock</span><span class="p">),</span>
                  <span class="n">get_items</span><span class="o">=</span><span class="n">get_image_files</span><span class="p">,</span> 
                  <span class="n">splitter</span><span class="o">=</span><span class="n">RandomSplitter</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
                  <span class="n">get_y</span><span class="o">=</span><span class="n">using_attr</span><span class="p">(</span><span class="n">RegexLabeller</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(.+)_\d+.jpg$'</span><span class="p">),</span> <span class="s1">'name'</span><span class="p">),</span>
@@ -1524,6 +1739,15 @@ fc.bias -&gt; True
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Sanity-Check">
+<a class="anchor" href="#Sanity-Check" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sanity Check<a class="anchor-link" href="#Sanity-Check"> </a>
+</h4>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1531,7 +1755,7 @@ fc.bias -&gt; True
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">pets</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">"images"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pets</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">"images"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1622,6 +1846,15 @@ Applying batch_tfms to the batch built
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dataloader">
+<a class="anchor" href="#Dataloader" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataloader<a class="anchor-link" href="#Dataloader"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's define our dataloader.</p>
 
 </div>
@@ -1634,7 +1867,7 @@ Applying batch_tfms to the batch built
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">"images"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span> <span class="o">=</span> <span class="n">pets</span><span class="o">.</span><span class="n">dataloaders</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s2">"images"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1644,6 +1877,15 @@ Applying batch_tfms to the batch built
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Training-(fine-tuning)-the-model">
+<a class="anchor" href="#Training-(fine-tuning)-the-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training (fine-tuning) the model<a class="anchor-link" href="#Training-(fine-tuning)-the-model"> </a>
+</h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1659,7 +1901,7 @@ Applying batch_tfms to the batch built
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet34</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">resnet34</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="n">error_rate</span><span class="p">)</span>
 <span class="n">learn</span><span class="o">.</span><span class="n">fine_tune</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
@@ -1750,6 +1992,15 @@ Applying batch_tfms to the batch built
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Interpretation-and-Analysis">
+<a class="anchor" href="#Interpretation-and-Analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interpretation and Analysis<a class="anchor-link" href="#Interpretation-and-Analysis"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>And the cherry on top is the ability to do interpretation and analyze errors with a very neatly written function call.</p>
 
 </div>
@@ -1762,7 +2013,7 @@ Applying batch_tfms to the batch built
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">interp</span> <span class="o">=</span> <span class="n">ClassificationInterpretation</span><span class="o">.</span><span class="n">from_learner</span><span class="p">(</span><span class="n">learn</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">interp</span> <span class="o">=</span> <span class="n">ClassificationInterpretation</span><span class="o">.</span><span class="n">from_learner</span><span class="p">(</span><span class="n">learn</span><span class="p">)</span>
 <span class="n">interp</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 </pre></div>
 
@@ -1805,6 +2056,15 @@ Applying batch_tfms to the batch built
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Summary">
+<a class="anchor" href="#Summary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary<a class="anchor-link" href="#Summary"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>And we're done! Sure the model can be improved upon from here, but the point is that I can now focus on that bit precisely after just getting started and not worry about anything else. I'd advice now to please read the chapter 5 of the <code>fastbook</code> as the last few lines have missed a few points about <code>Data Augmentation</code>, finding the right <code>Learning Rate</code> etc.</p>
 
 </div>
@@ -1813,7 +2073,7 @@ Applying batch_tfms to the batch built
 </div>
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"f530baf519134f90a8b18564f19cf88d": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "state": {"_view_name": "HBoxView", "_dom_classes": [], "_model_name": "HBoxModel", "_view_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_view_count": null, "_view_module_version": "1.5.0", "box_style": "", "layout": "IPY_MODEL_998b7582b3eb46a2b5ecac891987b4f4", "_model_module": "@jupyter-widgets/controls", "children": ["IPY_MODEL_112318aa6e224f3db8e7b896b8c4ae23", "IPY_MODEL_e138f8778d644af2bd7ee25d2e2ce90a"]}}, "998b7582b3eb46a2b5ecac891987b4f4": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_view_name": "LayoutView", "grid_template_rows": null, "right": null, "justify_content": null, "_view_module": "@jupyter-widgets/base", "overflow": null, "_model_module_version": "1.2.0", "_view_count": null, "flex_flow": null, "width": null, "min_width": null, "border": null, "align_items": null, "bottom": null, "_model_module": "@jupyter-widgets/base", "top": null, "grid_column": null, "overflow_y": null, "overflow_x": null, "grid_auto_flow": null, "grid_area": null, "grid_template_columns": null, "flex": null, "_model_name": "LayoutModel", "justify_items": null, "grid_row": null, "max_height": null, "align_content": null, "visibility": null, "align_self": null, "height": null, "min_height": null, "padding": null, "grid_auto_rows": null, "grid_gap": null, "max_width": null, "order": null, "_view_module_version": "1.2.0", "grid_template_areas": null, "object_position": null, "object_fit": null, "grid_auto_columns": null, "margin": null, "display": null, "left": null}}, "112318aa6e224f3db8e7b896b8c4ae23": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "state": {"_view_name": "ProgressView", "style": "IPY_MODEL_f15e9d2ea17b45d085f1155b202f01c9", "_dom_classes": [], "description": "100%", "_model_name": "FloatProgressModel", "bar_style": "success", "max": 87319819, "_view_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "value": 87319819, "_view_count": null, "_view_module_version": "1.5.0", "orientation": "horizontal", "min": 0, "description_tooltip": null, "_model_module": "@jupyter-widgets/controls", "layout": "IPY_MODEL_b188e1acdb8443b08dc0649ed9ba5469"}}, "e138f8778d644af2bd7ee25d2e2ce90a": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "state": {"_view_name": "HTMLView", "style": "IPY_MODEL_f2f886c54eaf4fbc8596102235398472", "_dom_classes": [], "description": "", "_model_name": "HTMLModel", "placeholder": "\u200b", "_view_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "value": " 83.3M/83.3M [00:01&lt;00:00, 55.1MB/s]", "_view_count": null, "_view_module_version": "1.5.0", "description_tooltip": null, "_model_module": "@jupyter-widgets/controls", "layout": "IPY_MODEL_d831df3988f54e43b3369fa52b77ae67"}}, "f15e9d2ea17b45d085f1155b202f01c9": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "state": {"_view_name": "StyleView", "_model_name": "ProgressStyleModel", "description_width": "initial", "_view_module": "@jupyter-widgets/base", "_model_module_version": "1.5.0", "_view_count": null, "_view_module_version": "1.2.0", "bar_color": null, "_model_module": "@jupyter-widgets/controls"}}, "b188e1acdb8443b08dc0649ed9ba5469": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_view_name": "LayoutView", "grid_template_rows": null, "right": null, "justify_content": null, "_view_module": "@jupyter-widgets/base", "overflow": null, "_model_module_version": "1.2.0", "_view_count": null, "flex_flow": null, "width": null, "min_width": null, "border": null, "align_items": null, "bottom": null, "_model_module": "@jupyter-widgets/base", "top": null, "grid_column": null, "overflow_y": null, "overflow_x": null, "grid_auto_flow": null, "grid_area": null, "grid_template_columns": null, "flex": null, "_model_name": "LayoutModel", "justify_items": null, "grid_row": null, "max_height": null, "align_content": null, "visibility": null, "align_self": null, "height": null, "min_height": null, "padding": null, "grid_auto_rows": null, "grid_gap": null, "max_width": null, "order": null, "_view_module_version": "1.2.0", "grid_template_areas": null, "object_position": null, "object_fit": null, "grid_auto_columns": null, "margin": null, "display": null, "left": null}}, "f2f886c54eaf4fbc8596102235398472": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "state": {"_view_name": "StyleView", "_model_name": "DescriptionStyleModel", "description_width": "", "_view_module": "@jupyter-widgets/base", "_model_module_version": "1.5.0", "_view_count": null, "_view_module_version": "1.2.0", "_model_module": "@jupyter-widgets/controls"}}, "d831df3988f54e43b3369fa52b77ae67": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_view_name": "LayoutView", "grid_template_rows": null, "right": null, "justify_content": null, "_view_module": "@jupyter-widgets/base", "overflow": null, "_model_module_version": "1.2.0", "_view_count": null, "flex_flow": null, "width": null, "min_width": null, "border": null, "align_items": null, "bottom": null, "_model_module": "@jupyter-widgets/base", "top": null, "grid_column": null, "overflow_y": null, "overflow_x": null, "grid_auto_flow": null, "grid_area": null, "grid_template_columns": null, "flex": null, "_model_name": "LayoutModel", "justify_items": null, "grid_row": null, "max_height": null, "align_content": null, "visibility": null, "align_self": null, "height": null, "min_height": null, "padding": null, "grid_auto_rows": null, "grid_gap": null, "max_width": null, "order": null, "_view_module_version": "1.2.0", "grid_template_areas": null, "object_position": null, "object_fit": null, "grid_auto_columns": null, "margin": null, "display": null, "left": null}}}
+{"112318aa6e224f3db8e7b896b8c4ae23": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "100%", "description_tooltip": null, "layout": "IPY_MODEL_b188e1acdb8443b08dc0649ed9ba5469", "max": 87319819, "min": 0, "orientation": "horizontal", "style": "IPY_MODEL_f15e9d2ea17b45d085f1155b202f01c9", "value": 87319819}}, "998b7582b3eb46a2b5ecac891987b4f4": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b188e1acdb8443b08dc0649ed9ba5469": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d831df3988f54e43b3369fa52b77ae67": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e138f8778d644af2bd7ee25d2e2ce90a": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d831df3988f54e43b3369fa52b77ae67", "placeholder": "\u200b", "style": "IPY_MODEL_f2f886c54eaf4fbc8596102235398472", "value": " 83.3M/83.3M [00:01&lt;00:00, 55.1MB/s]"}}, "f15e9d2ea17b45d085f1155b202f01c9": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": "initial"}}, "f2f886c54eaf4fbc8596102235398472": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "f530baf519134f90a8b18564f19cf88d": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_112318aa6e224f3db8e7b896b8c4ae23", "IPY_MODEL_e138f8778d644af2bd7ee25d2e2ce90a"], "layout": "IPY_MODEL_998b7582b3eb46a2b5ecac891987b4f4"}}}
 </script>
 
 
