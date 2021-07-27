@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://akashmehra.github.io/fastpages/fastpages/jupyter/image_classification/fastai/pytorch/pets/fastbook/fine_tuning/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html</loc>
-<lastmod>2021-07-20T00:00:00-05:00</lastmod>
+<loc>https://akashmehra.github.io/fastpages/fastpages/jupyter/image_classification/fastai/pytorch/pets/fastbook/fine_tuning/2021/07/26/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html</loc>
+<lastmod>2021-07-26T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://akashmehra.github.io/fastpages/2021/07/26/optimization_notes.html</loc>
+<lastmod>2021-07-26T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://akashmehra.github.io/fastpages/about/</loc>

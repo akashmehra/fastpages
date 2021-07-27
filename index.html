@@ -19,6 +19,22 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://akashmehra.github.io/fastpages/feed.xml" title="Akash's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
 
 <script>
 function wrap_img(fn) {
@@ -92,10 +108,15 @@ window.onload = wrap_img;
    <!-- Assemble final sorted posts array -->
   
   <ul class="post-list"><li><h3>
-    <a class="post-link" href="/fastpages/fastpages/jupyter/image_classification/fastai/pytorch/pets/fastbook/fine_tuning/2021/07/20/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html">
+    <a class="post-link" href="/fastpages/fastpages/jupyter/image_classification/fastai/pytorch/pets/fastbook/fine_tuning/2021/07/26/ResNet34_based_pets_classifier_using_PyTorch_and_Fast_ai.html">
     A comparison of Pets classifier using vanilla PyTorch and Fast.ai
     </a>
-</h3><p class="post-meta-description">Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with the one written using Fast.ai. The purpose of this blog is to demonstrate how `fastai` can really help one get started with `deep learning` and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boiler plate code. `fastai` is amazing at abstracting away a lot of inner details that we should focus on but not when we're starting out or when we're prototyping our research. The post below shows that what usually requires writing custom classes for creating `data-splitters`, `datasets`, `trainers` without using a library like `fast.ai` can be accomplished in very few lines of code with `fast.ai`. I start out by writing that code assuming we don't have access to `fast.ai` and then I go and surprise myself by showing how easy it is to perform the same task using `fast.ai`.</p><p class="post-meta">Jul 20, 2021</p>
+</h3><p class="post-meta-description">Comparing fine tuning of a RestNet34 based Pets classifier using vanilla PyTorch code with the one written using Fast.ai. The purpose of this blog is to demonstrate how `fastai` can really help one get started with `deep learning` and also provide right abstractions and encapsulation that helps one focus more on the research and modeling than to spend our time in boiler plate code. `fastai` is amazing at abstracting away a lot of inner details that we should focus on but not when we're starting out or when we're prototyping our research. The post below shows that what usually requires writing custom classes for creating `data-splitters`, `datasets`, `trainers` without using a library like `fast.ai` can be accomplished in very few lines of code with `fast.ai`. I start out by writing that code assuming we don't have access to `fast.ai` and then I go and surprise myself by showing how easy it is to perform the same task using `fast.ai`.</p><p class="post-meta">Jul 26, 2021</p>
+</li><li><h3>
+    <a class="post-link" href="/fastpages/2021/07/26/optimization_notes.html">
+    Optimization_notes
+    </a>
+</h3><p class="post-meta">Jul 26, 2021</p>
 </li></ul>
 
     </div>
